@@ -9,30 +9,29 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/fav/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/fav/favicon-16x16.png' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <!-- Формируется из локации и даты -->
-    <title>{{ post.location }}. {{ post.date }}</title>
+    <title>Публикации в категории {{ a }}</title>
   </head>
   <body>	   
     <header>
       <nav class="navbar navbar-light" style="background-color: lightskyblue">
         <div class="container">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="{% url 'blog:index' %}">
             <img src="{% static 'img/logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
             Блогикум
           </a>        
           <ul class="nav  nav-pills">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
+              <a class="nav-link" href="{% url 'blog:index' %}">
                 Лента записей
               </a>
             </li>
             <li class="nav-item">              
-              <a class="nav-link" href="about.html">
+              <a class="nav-link" href="{% url 'pages:about' %}">
                 О проекте
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="rules.html">
+              <a class="nav-link" href="{% url 'pages:rules' %}">
                 Наши правила
               </a>
             </li>
@@ -42,41 +41,7 @@
     </header>
     <main>
       <div class="container py-5">
-
-
-
-
-
-
-
-
-
-
-        <article>
-          <ul>
-            <li>
-              Место: {{ post.location }}              
-            </li>
-            <li>
-              Дата: {{ post.date }}
-            </li>
-            <li>
-              Категория: <a href="{% url 'blog:category_posts' post.category %}">{{ post.category }}</a>
-            </li>
-          </ul>         
-          <p>
-            {{ post.text }}
-          </p>          
-        </article>                
-
-
-
-
-
-
-
-
-
+        <h1>Публикации в категории {{ a }}</h1>   
       </div>
     </main>
     <footer class="border-top text-center py-3">
